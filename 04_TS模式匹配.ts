@@ -92,3 +92,11 @@ class Dong {
 const dong = new Dong();
 
 dong.hello.call({ name: "dong2" });
+
+//
+type GetRefProps<Props> = "ref" extends keyof Props
+  ? Props extends { ref?: infer Value | undefined }
+    ? Value
+    : never
+  : never;
+type RefProps = GetRefProps<{ ref: 1; a: "a" }>;
