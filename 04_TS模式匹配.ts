@@ -100,3 +100,5 @@ type GetRefProps<Props> = "ref" extends keyof Props
     : never
   : never;
 type RefProps = GetRefProps<{ ref: 1; a: "a" }>;
+
+export {};
